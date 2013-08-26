@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h1= "Complaint Letter Generator"
+	h3= "Complain about a person!"
+	form(name= "complain" action="/complain" method="GET")
+		p= "What's the full name of the person you want to complain about? "
+		label(for= "_FNAME_") First name
+		input(id= "_FNAME_" type="text" name= "_FNAME_")
+		label(for= "_LNAME_") Last name
+		input(id= "_LNAME_" type="text" name= "_LNAME_")
+
+		p= "Is this person: "
+		label(for= "Male") Male
+		input(id= "Male" type= "radio" name= "_SEX_" value= "Male") br
+		label(for= "Female") or Female
+		input(id= "Female" type= "radio" name= "_SEX_" value= "Female")
+
+		p= "How many sentences do you want to generate?"
+		select(name= "_SENTENCES_")
+			option(value="1") 1
+			option(value="3") 3
+			option(value="5") 5
+			option(value="10") 10
+			option(value="20") 20	
+		input(type="submit", value="Complain") 
